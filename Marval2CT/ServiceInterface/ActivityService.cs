@@ -33,6 +33,11 @@ namespace ValidationTest.Services
         public List<ActivityToUnit4DTO> ActivitiesToUnit4 { get; set; }
     }
 
+    public class UserActivityToUnit4IEnumerableChildren : IReturn<string>
+    {
+        [ValidateNotEmpty]
+        public IEnumerable<ActivityToUnit4DTO> ActivitiesToUnit4 { get; set; }
+    }
   
 
     public class TestService : Service
@@ -43,6 +48,11 @@ namespace ValidationTest.Services
         }
 
         public string Post(UserActivityToUnit4 request)
+        {
+            return "OK";
+        }
+
+        public string Post(UserActivityToUnit4IEnumerableChildren request)
         {
             return "OK";
         }
